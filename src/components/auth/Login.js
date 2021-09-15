@@ -1,9 +1,48 @@
+import { useHistory } from 'react-router-dom'
+
+import { loginUser } from '../../functionLib/api.js'
+import { setToken } from '../../functionLib/auth.js'
+
+import React from 'react'
+
 function Login() {
+  const history = useHistory()
+  
+  function handleSubmit(e) {
+    e.preventDefault()
+    const username = document.querySelector('#username').value
+    const password = document.querySelector('#password').value
+    const login = { username, password }
+    console.log('login', login)
+
+    const postLogin = async (formData) => {
+      try {
+        const res = await loginUser(formData)
+        setToken(res.data.token)
+        console.log('responce', res.data)
+        history.push('/profile/')
+      } catch (err) {
+        console.log('error', err)
+      }
+    }
+    postLogin(login)
+  }
+
   return (
     <>
       <h1>Login Page</h1>
       <form>
-        
+        <label>
+          <p>Username: </p>
+          <input type='text' id='username' />
+        </label>
+        <label>
+          <p>Password: </p>
+          <input type='password' id='password' />
+        </label>
+        <div>
+          <button className='submit' type='submit' onClick={handleSubmit}>Submit</button>
+        </div>
       </form>
     </>
   )

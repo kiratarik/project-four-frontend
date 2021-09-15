@@ -16,6 +16,7 @@ import Users from './components/users/Users.js'
 
 import Register from './components/auth/Register.js'
 import Login from './components/auth/Login.js'
+import Profile from './components/auth/Profile.js'
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/profile">
+          <Profile />
         </Route>
       </Switch>
     </BrowserRouter>

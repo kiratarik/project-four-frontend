@@ -1,6 +1,7 @@
 import React from 'react'
-import axios from 'axios'
 import { useHistory, useLocation } from 'react-router-dom'
+
+import { getGames } from '../../functionLib/api.js'
 
 function Game() {
   const history = useHistory()
@@ -10,7 +11,7 @@ function Game() {
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await axios.get('/api/games/')
+      const res = await getGames()
       const name = location.pathname.split('/games/').join('')
       const game = res.data.filter(game => {
         return (name === game.name)
@@ -20,7 +21,7 @@ function Game() {
       } 
     }
     getData()
-  },[])
+  },[location.pathname])
 
   return (
     <>
