@@ -1,18 +1,20 @@
 import React from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import { getGames } from '../../functionLib/api.js'
 
 function Games() {
   const history = useHistory()
-  const location = useLocation()
   const [gamesData, setGamesData] = React.useState([])
+  const [filteredData, setFilteredData] = React.useState([])
+
 
   React.useEffect(() => {
     const getData = async () => {
       const res = await getGames()
       console.log(res.data)
       setGamesData(res.data)
+      setFilteredData(res.data)
     }
     getData()
   },[])
@@ -20,22 +22,33 @@ function Games() {
   function cardClick(e) {
     const cardName = e.target.id
     const cardUrl = cardName.split(' ').join('') // Removing ' ' for url
-    history.push(`${location.pathname}/${cardUrl}`)
+    console.log(cardName,cardUrl)
+    history.push(`games/${cardUrl}`)
+  }
+
+  function handleSearch(e) {
+    console.log(e.target.value)
+    const search = e.target.value.toLowerCase()
+    setFilteredData(gamesData.filter(user => {
+      return (user.name.toLowerCase().includes(search))
+    }))
   }
 
   return (
     <>
       <h1>Games Page</h1>
-      {(gamesData.length > 0) && 
+      <input type='text' placeholder='Search..' onChange={handleSearch}></input>
+      <hr/>
+      {(filteredData.length > 0) && 
       (<section className='card-section'>
-        {gamesData.map(game => {
+        {filteredData.map(game => {
           return (
             <div key={game.id} 
               id={game.name}
               style={{ backgroundImage: `url('${game.image}')` }}
               onClick={cardClick}
             >
-              <h2>{game.name}</h2>
+              <h2 id={game.name}>{game.name}</h2>
             </div>
           )
         })}

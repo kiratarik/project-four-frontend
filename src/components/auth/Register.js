@@ -13,15 +13,19 @@ function Register() {
     const password = document.querySelector('#password').value
     const passwordConfirmation = document.querySelector('#password_confirmation').value
     const register = { username, email, profileImage, password, passwordConfirmation }
+    const registerForm = document.querySelector('#register-form')
+    registerForm.classList.remove('form-red')
     console.log('register', register)
 
     const postRegister = async (formData) => {
       try {
         const res = await registerUser(formData)
         console.log('responce', res.data)
+        registerForm.classList.remove('form-red')
         history.push('/login/')
       } catch (err) {
         console.log('error', err)
+        registerForm.classList.add('form-red')
       }
     }
     postRegister(register)
@@ -30,7 +34,7 @@ function Register() {
   return (
     <>
       <h1>Register Page</h1>
-      <form>
+      <form id='register-form'>
         <label>
           <p>Username: </p>
           <input type='text' id='username' />

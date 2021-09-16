@@ -12,9 +12,11 @@ function User() {
   React.useEffect(() => {
     const getData = async () => {
       const res = await showUsers()
-      const name = location.pathname.split('/users/').join('')
+      console.log(res.data)
+      const id = location.pathname.split('/users/').join('')
+      console.log(id)
       const user = res.data.filter(user => {
-        return (name === user.username)
+        return (id === user.pk.toString())
       })
       if (user.length === 1) {
         setUserData(user[0])

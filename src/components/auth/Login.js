@@ -12,6 +12,8 @@ function Login() {
     e.preventDefault()
     const username = document.querySelector('#username').value
     const password = document.querySelector('#password').value
+    const loginForm = document.querySelector('#login-form')
+    loginForm.classList.remove('form-red')
     const login = { username, password }
     console.log('login', login)
 
@@ -20,9 +22,11 @@ function Login() {
         const res = await loginUser(formData)
         setToken(res.data.token)
         console.log('responce', res.data)
+        loginForm.classList.remove('form-red')
         history.push('/profile/')
       } catch (err) {
         console.log('error', err)
+        loginForm.classList.add('form-red')
       }
     }
     postLogin(login)
@@ -31,7 +35,7 @@ function Login() {
   return (
     <>
       <h1>Login Page</h1>
-      <form>
+      <form id='login-form'>
         <label>
           <p>Username: </p>
           <input type='text' id='username' />
