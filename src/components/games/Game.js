@@ -1,11 +1,9 @@
 import React from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import { getGames } from '../../functionLib/api.js'
 
 function Game() {
-  const history = useHistory()
-  console.log(history)
   const location = useLocation()
   const [gameData, setGameData] = React.useState({})
 
@@ -33,7 +31,7 @@ function Game() {
         <p>{gameData.description}</p>
         <h4>Rules:</h4>
         <p>{gameData.rules}</p>
-        <h4>Image</h4>
+        <h4>Image:</h4>
         <img src={gameData.image} style={{ width: '100%' }} />
       </div>
       }

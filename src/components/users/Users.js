@@ -11,7 +11,6 @@ function Users() {
   React.useEffect(() => {
     const getData = async () => {
       const res = await showUsers()
-      console.log(res.data)
       setUsersData(res.data)
       setFilteredData(res.data)
     }
@@ -21,12 +20,10 @@ function Users() {
   function cardClick(e) {
     const cardName = e.target.id
     const cardUrl = cardName.split(' ').join('') // Removing ' ' for url
-    console.log(cardName,cardUrl)
     history.push(`users/${cardUrl}`)
   }
 
   function handleSearch(e) {
-    console.log(e.target.value)
     const search = e.target.value.toLowerCase()
     setFilteredData(usersData.filter(user => {
       return (user.username.toLowerCase().includes(search))

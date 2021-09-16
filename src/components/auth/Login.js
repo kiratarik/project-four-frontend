@@ -15,17 +15,14 @@ function Login() {
     const loginForm = document.querySelector('#login-form')
     loginForm.classList.remove('form-red')
     const login = { username, password }
-    console.log('login', login)
 
     const postLogin = async (formData) => {
       try {
         const res = await loginUser(formData)
         setToken(res.data.token)
-        console.log('responce', res.data)
         loginForm.classList.remove('form-red')
-        history.push('/profile/')
+        history.push('/profile')
       } catch (err) {
-        console.log('error', err)
         loginForm.classList.add('form-red')
       }
     }

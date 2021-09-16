@@ -12,7 +12,6 @@ function Games() {
   React.useEffect(() => {
     const getData = async () => {
       const res = await getGames()
-      console.log(res.data)
       setGamesData(res.data)
       setFilteredData(res.data)
     }
@@ -22,12 +21,10 @@ function Games() {
   function cardClick(e) {
     const cardName = e.target.id
     const cardUrl = cardName.split(' ').join('') // Removing ' ' for url
-    console.log(cardName,cardUrl)
     history.push(`games/${cardUrl}`)
   }
 
   function handleSearch(e) {
-    console.log(e.target.value)
     const search = e.target.value.toLowerCase()
     setFilteredData(gamesData.filter(user => {
       return (user.name.toLowerCase().includes(search))

@@ -15,16 +15,13 @@ function Register() {
     const register = { username, email, profileImage, password, passwordConfirmation }
     const registerForm = document.querySelector('#register-form')
     registerForm.classList.remove('form-red')
-    console.log('register', register)
 
     const postRegister = async (formData) => {
       try {
-        const res = await registerUser(formData)
-        console.log('responce', res.data)
+        await registerUser(formData)
         registerForm.classList.remove('form-red')
         history.push('/login/')
       } catch (err) {
-        console.log('error', err)
         registerForm.classList.add('form-red')
       }
     }

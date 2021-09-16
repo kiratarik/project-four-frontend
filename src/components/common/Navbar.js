@@ -1,14 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { isAuthenticated, removeToken } from '../../functionLib/auth.js'
 
 function Navbar() {
+  const location = useLocation()
   const [loggedIn, setLoggedIn] = React.useState(false)
 
   React.useEffect(() => {
     setLoggedIn(isAuthenticated())
-  },[])
+  },[location.pathname])
 
   function handleLogOut() {
     removeToken()

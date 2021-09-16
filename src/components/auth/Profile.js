@@ -8,7 +8,6 @@ function Profile() {
   React.useEffect(() => {
     const getData = async () => {
       const res = await profileUser()
-      console.log(res.data)
       setProfileData(res.data)
     }
     getData()
