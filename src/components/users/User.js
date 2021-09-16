@@ -23,7 +23,7 @@ function User() {
 
   return (
     <>
-      <h1>User Detail Page</h1>
+      <h1>User Details</h1>
       {userData.username &&
       <div>
         <h2>{userData.username}</h2>

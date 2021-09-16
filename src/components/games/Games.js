@@ -33,7 +33,7 @@ function Games() {
 
   return (
     <>
-      <h1>Games Page</h1>
+      <h1>Games</h1>
       <input type='text' placeholder='Search..' onChange={handleSearch}></input>
       <hr/>
       {(filteredData.length > 0) && 

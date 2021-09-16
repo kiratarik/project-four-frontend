@@ -15,7 +15,7 @@ function Profile() {
 
   return (
     <>
-      <h1>Profile Page</h1>
+      <h1>Profile</h1>
       <h2>Username: {profileData.username}</h2>
       <h3>Email: {profileData.email}</h3>
       <img src={profileData.profileImage} style={{ width: '100%' }} />

@@ -31,7 +31,7 @@ function Login() {
 
   return (
     <>
-      <h1>Login Page</h1>
+      <h1>Login</h1>
       <form id='login-form'>
         <label>
           <p>Username: </p>

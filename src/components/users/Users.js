@@ -32,7 +32,7 @@ function Users() {
 
   return (
     <>
-      <h1>Users Page</h1>
+      <h1>Users</h1>
       <input type='text' placeholder='Search..' onChange={handleSearch}></input>
       <hr/>
       {(filteredData.length > 0) && 

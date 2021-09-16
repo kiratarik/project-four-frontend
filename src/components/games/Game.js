@@ -23,7 +23,7 @@ function Game() {
 
   return (
     <>
-      <h1>Game Detail Page</h1>
+      <h1>Game Details</h1>
       {gameData.name &&
       <div>
         <h2>{gameData.name}</h2>

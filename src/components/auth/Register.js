@@ -30,7 +30,7 @@ function Register() {
 
   return (
     <>
-      <h1>Register Page</h1>
+      <h1>Register</h1>
       <form id='register-form'>
         <label>
           <p>Username: </p>
