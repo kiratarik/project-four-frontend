@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { getToken, removeToken } from './auth.js'
-
-const baseURL = '/api'
+import { baseUrl } from '../config.js'
 
 function getHeaders(){
   const token = getToken()
@@ -13,27 +12,27 @@ function getHeaders(){
 // Game requests
 
 export function getGames() {
-  return axios.get(`${baseURL}/games/`)
+  return axios.get(`${baseUrl}/games/`)
 }
 
 
 // User requests
 
 export function registerUser(formData){
-  return axios.post(`${baseURL}/auth/register/`, formData)
+  return axios.post(`${baseUrl}/auth/register/`, formData)
 }
 
 export function loginUser(formData){
   removeToken()
-  return axios.post(`${baseURL}/auth/login/`, formData)
+  return axios.post(`${baseUrl}/auth/login/`, formData)
 }
 
 export function profileUser(){
-  return axios.get(`${baseURL}/auth/profile/`, getHeaders())
+  return axios.get(`${baseUrl}/auth/profile/`, getHeaders())
 }
 
 export function showUsers(){
-  return axios.get(`${baseURL}/auth/users/`)
+  return axios.get(`${baseUrl}/auth/users/`)
 }
 
 
