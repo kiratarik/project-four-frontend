@@ -13,7 +13,7 @@
 1. [Bugs](#bugs)
 
 ## Overview:
-My forth project in the Software Engineering Immersive Course and my first time coding the backend in a project. The project was to make a website with user accounts you can make and login to and simple games pages you can look at.
+My forth project in the Software Engineering Immersive Course and my first time coding the backend in a project. The solo project was to make a website with user accounts you can make and login to and simple games pages you can look at.
 
 ## Brief:
 **Goal:** Create a website for looking at descriptions of simple games.
