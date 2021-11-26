@@ -4,6 +4,7 @@
 ## Table of Contents:
 1. [Overview](#overview)
 1. [Brief](#brief)
+1. [Planning](#planning)
 1. [Approach](#approach)
 1. [Wins](#wins)
 1. [Challenges](#challenges)
@@ -27,12 +28,13 @@ My forth project in the Software Engineering Immersive Course and my first time 
 
 **Deployed version:** https://sei-project-four.netlify.app/
 
+## Planning:
+My initial idea was extremely overambitious with the idea of coding multiple two player games and implementing it such that two users can play it online which is a type of interactivity I had never tried before nor seen done. I was convinced by my tutors to aim for something realistic with some stretch goals for if I finish that early. The end result is that I decided to cut out the actual functioning games and replace it with informational pages and had favoriting, following, and invites as a stretch goal. Sadly, due to some issues, I ran out of time before implementing the stretch goals:
+![image1](./ReadMeImages/1.png)
+
 ## Approach:
 My approach for the frontend was to focus on main and home pages before coding the detail pages, taking the time to plan out and create all the components I thought I would need before coding them.
 For the backend, I made some models first, checking things were working how I wanted before adding new features. I made the game models first before getting stuck on the user side of things for a while before eventually creating some user models too. I often coded new backend parts as and when I realised I would need them for the frontend.
-
-My initial idea was extremely overambitious with the idea of coding multiple two player games and implementing it such that two users can play it online which is a type of interactivity I had never tried before nor seen done. I was convinced by my tutors to aim for something realistic with some stretch goals for if I finish that early. The end result is that I decided to cut out the actual functioning games and replace it with informational pages and had favoriting, following, and invites as a stretch goal. Sadly, due to some issues, I ran out of time before implementing the stretch goals:
-![image1](./ReadMeImages/1.png)
 
 I started with the backend, coding a model for the games and their descriptions. I later put some commented out work for stretch goals in advance that sadly wasn’t used in the end:
 ![image2](./ReadMeImages/2.png)
